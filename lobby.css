@@ -1,0 +1,117 @@
+html {
+    overflow: hidden
+  }   
+  body, svg  {
+    padding: 0; 
+    margin: 0; 
+    border: 0
+  }
+  #svg {
+    height: 100vh;
+    background: radial-gradient(circle at bottom, #23435c, #070d12)
+  }
+  .animate {
+    animation: starFlash 3s linear infinite;
+    box-shadow: 0px 0px 5px #fff
+  }
+  text {
+    font-family: 'Space Mono';
+    opacity: .8;
+    fill: #fff
+  }
+  .desc {
+    font-size:  calc(17 + (20 - 17) * (100vw - 600px) / (1700 - 600))
+  }
+  .list-item {
+    font-size: calc(20px + (32 - 20) * (100vw - 600px) / (1700 - 600))
+  }
+  .list-item {
+    cursor: pointer
+  }
+  .desc {
+    opacity: 0; 
+    animation: text 1s 1.5s linear forwards
+  }
+  .cStar {
+    fill:#fff; 
+    opacity: 0; 
+    animation: visibleStar 1s ease forwards
+  }
+  #constellation { 
+    animation: dash 3.5s .5s linear forwards
+  }
+  .list-item:hover {
+    opacity: .5
+  }
+  
+  /*Pause animation when path is drowing to encrease FPS*/
+  .paused {
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused; 
+    animation-play-state:paused;
+  }
+  
+  /* Keyframs */
+  @keyframes dash {100% {stroke-dashoffset: 0} }
+  @keyframes visibleStar {100% {opacity: 1} }
+  @keyframes text {100% {opacity: 1} }
+  
+      /*Chrome suported only*/
+  @keyframes starFlash {
+    0% {
+      r: 2.5
+    } 
+    50% {
+      r: .5
+    } 
+    100% {
+      r: 1.5
+    } 
+  }
+  #form-container{
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color:rgba(38, 38, 37, 0.9);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+
+#form__container__header {
+    border-radius: 10px 10px 0 0;
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(54, 55, 57, 0.7);
+    margin: 0;
+    font-size: 18px;
+    font-size: 300;
+    line-height: 0;
+  }
+
+  #form__content__wrapper{
+    padding: 20px;
+}
+
+input {
+    box-sizing: border-box;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    padding: 16px 20px;
+    font-size: 15px;
+    background-color: #3f434a;
+    margin-top: 32px;
+  }
+ 
+ 
+  input[type='submit'] {
+    background-color: #4d90f3;
+    cursor: pointer;
+  }
