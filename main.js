@@ -1,4 +1,4 @@
-let APP_ID = "*********************************";
+let APP_ID = "04ec6e42136041e4b6a671f218f00d32";
 
 let token = null;
 let uid = String(Math.floor(Math.random() * 10000));
